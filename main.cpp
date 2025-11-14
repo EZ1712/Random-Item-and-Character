@@ -1,147 +1,571 @@
 #include <iostream>
+#include <string>
+#include <array>
+#include <random>
+#include <cctype>
 
 using namespace std;
 
- // Data array karakter, artefak, dan item
-string list_karakter_S[5] = {"Argon", "Alexandria", "Prostius", "Dularia", "Golaria"};
-string list_karakter_A[10]= {"Stella", "Warden", "Dargon", "Boravia", "Twilight Lich", "The Forgotten", "Gorgon", "Harbinger", "Kranvagn", "Stridsvan"};
+// Data struct
+// Karakter Data
+struct karakter {
+    string nama;
+    char rank;
+    string elemental;
+    string type;
+};
 
-string list_artefak_S[5] = {"Heart of the deep", "Skull of the deep", "Withering neckless", "Amulet of sturm", ".Glove of the ancient"};
-string list_artefak_A[5] = {"Deck of ages", "Divine sharpness scroll", "Book of utheric", "Bone of the sea", "Corus Dram"};
-string list_artefak_B[10] = {"Vibranium of ages", "The silenced note", "Dune of smith", "Smite Of dawn", "Mob masher", "Cursium of Ender", "Charm of mortal", "Charm of fire", "Charm of hydro", "Chains of borivia"};
+// Artefak Data
+struct artefak {
+    string nama;
+    char rank;
+    string elemental;
+    float crit_rate;
+    float crit_damage;
+}; 
 
-string list_item_S[5] = {"Gem of the blood lord", "Gem of the mageslayer", "Godforged pearl", "Demonforged pearl", "Eye of hydra"};
-string list_item_A[10] = {"Mortalforged pearl", "Demiforged pearl", "Luminous crystal shard", "Flawless gem", "Giga gem", "Andesite gem", "Zinc", "Coil", "Steel Malice", "Sheetmet"};
-string list_item_B[20] = {"Brawler's gem", "Breach Gem", "Guardian Gem", "Witherbone", "Utheric Shard", "Cinder", "Salpeter", "Artisan", "Celestigem", "Dimerald", "Cytrine", "Iolite", "Alexandrite", "Theodrite", "Kyanite", "Tanzanite", "Alchemical Niter", "Diga Shard", "Lostrite Shard", "Diorite shard"};
+// Item Data
+struct item {
+    string nama;
+    char rank;
+    string element;
+    string buffs;
+    string status_effect;    
+
+};
+
+// Data Prototype
+array<karakter, 5> data_karakter_S();
+array<karakter, 10> data_karakter_A();
+
+array<artefak, 5> data_artefak_S();
+array<artefak, 5> data_artefak_A();
+array<artefak, 10> data_artefak_B();
+
+array<item, 5> data_item_S();
+array<item, 10> data_item_A();
+array<item, 20> data_item_B();
 
 // fungsi prototype
-int main_menu(char menu);
+void main_menu();
+void play_menu();
 void list_menu();
-void list_template();
-void listing(char list);
+void info();
+void exit();
+
+void list_karakter();
+void list_artefak();
+void list_item();
+
+void random_value() {
+    random_device rd;
+    uniform_int_distribution distribution(1 ,100);
+
+    cout << distribution(rd) << endl;
+};
 
 void test();
 
 // fungsi utama
 int main() {
 
-    char menu, list;
-    int role;
+    main_menu();
 
-    main_menu(menu);
-
-    cin >> menu;
-
-    if (menu == '1') {
-        cout << "menu gacha" << endl;
-    } else if (menu == '2') {
-        cout << "list item karakter" << endl;
-
-        list_menu();
-        cout << "________________________________________\n";
-        cout << "Pilih opsi dengan angka : ";
-        cin >> list;
-        switch (list) {
-            case '1':
-                cout << "< karakter list >" << endl;
-                listing(list); break;
-            case '2':
-                cout << "< Artefak List >" << endl;
-                listing(list); break;
-            case '3':
-                cout << "< Item >" << endl;
-                listing(list); break;
-        }
-
-
-        // for (int i = 0; i < 5; i++) {
-        //     cout << "[" << i << "] : " << list_karakter_S[i] << endl;
-        // }
-
-        
-    }
-
-    test();
 
     return 0;
 }
 
+// Data Karakter, Artefak, dam Item
+
+// Karakter Data / Karakter Data / Karakter Data / Karakter Data / Karakter Data 
+array<karakter, 5> data_karakter_S() {
+    array<karakter, 5> karakter_S; 
+
+    karakter_S[0] = {"Argon", 'S', "Electro", "Human"};
+    karakter_S[1] = {"Alexandria", 'S', "Ice", "Demon"};
+    karakter_S[2] = {"Prostius", 'S', "Fire", "Demigod"};
+    karakter_S[3] = {"Dularia", 'S' , "Hydro", "Demon"};
+    karakter_S[4] = {"Golaria", 'S', "Fire", "Human"};
+
+    return karakter_S;
+}
+
+array<karakter, 10> data_karakter_A() {
+    array<karakter, 10> karakter_A;
+
+    karakter_A[0] = {"Boravia", 'A', "Ice", "Human"};
+    karakter_A[1] = {"Twilight Lich", 'A', "Fire", "Demon"};
+    karakter_A[2] = {"The Forgotten", 'A', "Hydro", "Demigod"};
+    karakter_A[3] = {"stella", 'A', "Fire", "Human"};
+    karakter_A[4] = {"Warden", 'A', "Ice", "Human"};
+    karakter_A[5] = {"Gorgon", 'A', "Hydro", "Demon"};
+    karakter_A[6] = {"Dargon", 'A', "Elektro", "Demigod"};
+    karakter_A[7] = {"Harbinger", 'A', "Fire", "Demon"};
+    karakter_A[8] = {"Kranvagn", 'A', "Ice", "Human"};
+    karakter_A[9] = {"Stridsvan", 'A', "Hydro", "Demigod"};
+
+    return karakter_A;
+}
+
+// Artefak Data / Artefak Data / Artefak Data / Artefak Data / Artefak Data  
+array<artefak, 5> data_artefak_S() {
+    array<artefak, 5> artefak_S; 
+
+    artefak_S[0] = {"Heart of the deep", 'S', "Fire", 36, 74};
+    artefak_S[1] = {"Skull of the deep", 'S', "Hydro", 33, 68};
+    artefak_S[2] = {"Withering neckless", 'S', "Elektro", 38, 77};
+    artefak_S[3] = {"Amulet of sturm", 'S', "Ice", 31, 63};
+    artefak_S[4] = {"Glove of the ancient", 'S', "Hydro", 40, 80};
+
+    return artefak_S;
+}
+
+array<artefak, 5> data_artefak_A() {
+    array<artefak, 5> artefak_A;
+
+    artefak_A[0] = {"Deck of ages", 'A', "Fire", 22, 45};
+    artefak_A[1] = {"Divine sharpness scroll", 'A', "Ice", 17, 33};
+    artefak_A[2] = {"Book of utheric", 'A', "Elektro", 19, 39};
+    artefak_A[3] = {"Bone of the sea", 'A', "Ice", 15, 30};
+    artefak_A[4] = {"Corus Dram", 'A', "Fire", 24, 48};
+
+    return artefak_A;
+}
+
+array<artefak, 10> data_artefak_B() {
+    array<artefak, 10> artefak_B;
+    
+    artefak_B[0] = {"Vibranium of ages", 'B', "Hydro", 9, 21};
+    artefak_B[1] = {"The silenced note", 'B', "Fire", 6, 14};
+    artefak_B[2] = {"Dune of smith", 'B', "Electro", 5, 10};
+    artefak_B[3] = {"Smite Of dawn", 'B', "Hydro", 7, 18};
+    artefak_B[4] = {"Mob masher", 'B', "Ice", 10, 25};
+    artefak_B[5] = {"Cursium of Ender", 'B', "Wind", 8, 19};
+    artefak_B[6] = {"Charm of mortal", 'B', "Earth", 5, 11};
+    artefak_B[7] = {"Charm of fire", 'B', "Shadow", 6, 13};
+    artefak_B[8] = {"Charm of hydro", 'B', "Light", 7, 17};
+    artefak_B[9] = {"Chains of borivia", 'B', "Toxin", 9, 12};
+
+    return artefak_B; 
+}
+
+// Item Data / Item Data / Item Data / Item Data / Item Data 
+array<item, 5> data_item_S() {
+    array<item, 5> item_S;
+
+    item_S[0] = {"Gem of the blood lord", 'S', "Hydro", "30% Life Steal", "Bleed on Hit"};
+    item_S[1] = {"Gem of the mageslayer", 'S', "Fire", "25% Magic Resist", "Silence on Hit"};
+    item_S[2] = {"Godforged pearl", 'S', "Ice", "20% All Stats", "Burn Aura"};
+    item_S[3] = {"Demonforged pearl", 'S', "Elektro", "40% Fire Damage", "Poison"};
+    item_S[4] = {"Eye of hydra", 'S', "Shadow", "20% Multi-hit Chance", "Slow on Hit"};
+
+    return item_S;
+}
+
+array<item, 10> data_item_A() {
+    array<item, 10> item_A;
+
+    item_A[0] = {"Mortalforged pearl", 'A', "Wind", "15% Physical Damage", "Minor Blind Aura"};
+    item_A[1] = {"Demiforged pearl", 'A', "Earth", "10% Elemental Resist", "Bleed Chance"};
+    item_A[2] = {"Luminous crystal shard", 'A', "Fire", "10% Mana Regen", "Daze"};
+    item_A[3] = {"Flawless gem", 'A', "Toxin", "10% To two random Stats", "Weaken Armor"};
+    item_A[4] = {"Giga gem", 'A', "Light", "20% Max HP", "Disorient"};
+    item_A[5] = {"Andesite gem", 'A', "Hydro", "10% Defense", "Mark Target"};
+    item_A[6] = {"Zinc", 'A', "Ice", "5% Attack Speed", "chill"};
+    item_A[7] = {"Coil", 'A', "Elektro", "10% Energy Regen", "Sap Energy"};
+    item_A[8] = {"Steel Malice", 'A', "Fire", "10% Damage", "Interrup Casting"};
+    item_A[9] = {"Sheetmet", 'A', "Shadow", "10% Block Chance", "Cripple Movement"};
+
+    return item_A; 
+}
+
+array<item, 20> data_item_B() {
+    array<item, 20> item_B;
+
+    item_B[0] = {"Brawler's gem", 'B', "Earth", "5% melee Damage", "Stun" };
+    item_B[1] = {"Breach Gem", 'B', "Wind", "3% Armor Penetration", "Weakness"};
+    item_B[2] = {"Guardian Gem", 'B', "Toxin", "5% HP", "Burn on Attacker"};
+    item_B[3] = {"Witherbone", 'B', "Ice", "3% Magic Resist", "Slow Duration"};
+    item_B[4] = {"Utheric Shard", 'B', "Light", "5% Fire Resist", "Silence Resist"};
+    item_B[5] = {"Cinder", 'B', "Fire", "3% Explosion Radius", "Blind"};
+    item_B[6] = {"Salpeter", 'B', "Hydro", "5% Crafting Speed", "Fear"};
+    item_B[7] = {"Artisan", 'B', "Elektro", "3% Light Damage", "Root"};
+    item_B[8] = {"Celestigem", 'B', "Shadow", "3% Poison Resist", "Curse"};
+    item_B[9] = {"Dimerald", 'B', "Earth", "2% Crit Chance", "Confuse"};
+    item_B[10] = {"Cytrine", 'B', "Fire", "Spell Haste", "Sap Mana"};
+    item_B[11] = {"Iolite", 'B', "Ice", "2% Luck", "Chill"};
+    item_B[12] = {"Alexandrite", 'B', "Wind", "3% Earth Resist", "Cripple"};
+    item_B[13] = {"Theodrite", 'B', "Toxin", "2% Ice Resist", "Mark"};
+    item_B[14] = {"Kyanite", 'B', "Light", "2% Magic Damage", "Disorient"};
+    item_B[15] = {"Tanzanite", 'B', "Hydro", "2% Potion Effectiveness", "Interrupt"};
+    item_B[16] = {"Alchemical Niter", 'B', "Fire", "2% Dig Speed", "Daze"};               
+    item_B[17] = {"Diga Shard", 'B', "Electro", "2% Evasion", "Sap Energy"};
+    item_B[18] = {"Lostrite Shard", 'B', "Ice", "2% Knockbck Resist", "Weaken Armor"};
+    item_B[19] = {"Diorite shard", 'B', "Shadow", "2% Fire Resist", "Bleed"};
+
+
+    return item_B;
+}
+
+
+
+
 // fungsi main menu ketika awal menjalankan program
-int main_menu(char menu) {
-    cout << "\n<====================> RANDOM ITEM AND CHARACTER <====================>\n\n";
-    cout << "Random item and character adalah sebuah program untuk mendapatkan item dan karakter secara random" << endl << endl;
-    cout << "       [1] : MAIN" << endl;
-    cout << "       [2] : LIST ITEM DAN KARAKTER" << endl << endl;
+void main_menu() {
 
-    cout << "Pilih dengan angka : ";
+    char pilih;
+    int alret = 0;
 
-    return 0;
+    do {
+        cout << "\n<====================> RANDOM ITEM AND CHARACTER <====================>\n\n";
+        cout << "Random item and character adalah sebuah program untuk mendapatkan item dan karakter secara random" << endl << endl;
+        cout << "       [1] : Play" << endl;
+        cout << "       [2] : List" << endl;
+        cout << "       [3] : Info" << endl;
+        cout << "       [X] : Exit" << endl;
+
+        cout << "-------------------------------------" << endl;
+        if (alret > 0) {
+            cout << "Pilih dengan angka [Input Invalid] : ";
+        } else {
+            cout << "Pilih dengan angka : ";
+        }
+        alret++;
+        cin >> pilih;
+
+        switch (toupper(pilih)) {
+            case '1':
+                play_menu(); break;
+            case '2':
+                list_menu(); break;
+            case '3':
+                info(); break;
+            case 'X':
+                exit(0);
+                break;
+        }
+
+
+    } while (pilih != 'X');
+
+}
+
+// Play Menu Funtion
+void play_menu() {
+
+    char pilih;
+    // int alret = 0;
+
+    // do {    
+        cout << "====================> Gacha Choice <====================" << endl << endl;
+        cout << "       [1] : Gacha Limited" << endl;
+        cout << "       [2] : Gacha Standart" << endl;
+        cout << "       [X] : Back" << endl;
+
+        cout << "Pilih opsi dengan angka : ";
+        cin >> pilih;
+
+        switch (toupper(pilih)) {
+            case '1':
+
+            case '2':
+
+            case 'X':
+                main_menu();
+        };
+
+    //  } while (alret != 0);
+
 }
 
 // fungsi untuk melihat list karakter, artefak, dan item
 void list_menu() {
-    cout << "\n<====================> LIST ITEM AND CHARACTER <====================>\n\n";
-    cout << "Lihat daftar rangking " << endl << endl;
-    cout << "       [1] : Character" << endl;
-    cout << "       [2] : Artefak" << endl;
-    cout << "       [3] : Item" << endl;
-    cout << "       [X] : Kembali" << endl;
+
+
+    char pilih;
+    int alret = 0;
+
+    do {
+        cout << "\n<====================> LIST ITEM AND CHARACTER <====================>\n\n";
+        cout << "Lihat daftar rangking " << endl << endl;
+        cout << "       [1] : Character" << endl;
+        cout << "       [2] : Artefak" << endl;
+        cout << "       [3] : Item" << endl;
+        cout << "       [X] : Kembali" << endl;
+
+        cout << "\n--------------------------------------------------\n";
+
+        if (alret > 0) {
+            cout << "Pilih dengan angka [Input Invalid] : ";
+        } else {
+            cout << "Pilih dengan angka : ";
+        }
+        alret++;
+
+        cin >> pilih;
+
+        switch (toupper(pilih)) {
+            case '1':
+                list_karakter(); break;
+            case '2':
+                list_artefak(); break;
+            case '3':
+                list_item(); break;
+            case 'X':
+                main_menu();
+            };
+
+    } while (pilih != 'X');
+
+}
+
+void list_karakter() {
+    char pilih;
+    int count = 0;
+    int alret = 0;
+
+    auto karakter_S = data_karakter_S();
+    auto karakter_A = data_karakter_A();
+
+        cout << "\n====================> List Karakter <====================\n\n";
+
+        
+    do {
+        for (int i = 0; i < karakter_S.size(); i++ ) {
+            count++;
+
+            cout << "----------------------------------------------" << endl;
+            cout << "|           | " << endl;
+            cout << "|   SSSSS   | " << "[ " << count << " ]" << endl;
+            cout << "|   S       | " << "Nama       : " << karakter_S[i].nama << endl;
+            cout << "|   SSSSS   | " << "Rank       : " << karakter_S[i].rank << endl;
+            cout << "|       S   | " << "Elemental  : " << karakter_S[i].elemental << endl;
+            cout << "|   SSSSS   | " << "Type       : " << karakter_S[i].type << endl;
+            cout << "|           | " << endl;
+            cout << "----------------------------------------------" << endl;
+
+        }
+
+        for (int i = 0; i < karakter_A.size(); i++ ) {
+            count++;
+
+            cout << "----------------------------------------------" << endl;
+            cout << "|           | " << endl;
+            cout << "|    AAA    | " << "[ " << count << " ]" << endl;
+            cout << "|   A   A   | " << "Nama       : " << karakter_A[i].nama << endl;
+            cout << "|   A   A   | " << "Rank       : " << karakter_A[i].rank << endl;
+            cout << "|   AAAAA   | " << "Elemental  : " << karakter_A[i].elemental << endl;
+            cout << "|   A   A   | " << "Type       : " << karakter_A[i].type << endl;
+            cout << "|           | " << endl;
+            cout << "----------------------------------------------" << endl;
+        }
+
+        if (alret > 0) {
+            cout << "Pilih dengan angka [Input Invalid] : ";
+        } else {
+            cout << "Pilih dengan angka : ";
+        }
+        alret++;
+
+        cin >> pilih;
+
+        switch (toupper(pilih)) {
+            case 'X':
+                list_menu();
+        }
+
+        count = 0;
+
+    } while (pilih != 'X'); 
+}
+
+void list_artefak() {
+    char pilih;
+    int count = 0;
+    int alret = 0;
+
+    auto artefak_S = data_artefak_S();
+    auto artefak_A = data_artefak_A();
+    auto artefak_B = data_artefak_B();
+
+    do {
+
+        cout << "\n====================> List artefak <====================\n\n";
+        for (int i = 0; i < artefak_S.size(); i++ ) {
+            count++;
+            cout << "[" << count << "] : ";
+
+            cout << "{" << artefak_S[i].nama << "}" << endl;
+        }
+
+        for (int i = 0; i < artefak_A.size(); i++ ) {
+            count++;
+            cout << "[" << count << "] : ";
+
+            cout << "{" << artefak_A[i].nama << "}" << endl;
+        }
+
+        for (int i = 0; i < artefak_B.size(); i++ ) {
+            count++;
+            cout << "[" << count << "] : ";
+
+            cout << "{" << artefak_B[i].nama << "}" << endl;
+        }
+
+        if (alret > 0) {
+            cout << "Pilih dengan angka [Input Invalid] : ";
+        } else {
+            cout << "Pilih dengan angka : ";
+        }
+        alret++;
+
+        cin >> pilih;
+
+        switch (toupper(pilih)) {
+            case 'X':
+                list_menu();
+        }
+
+        count = 0;
+
+    } while (pilih != 'X');
+
+}
+
+void list_item() {
+
+    char pilih;
+    int count = 0;
+    int alret = 0;
+
+    auto item_S = data_item_S();
+    auto item_A = data_item_A();
+    auto item_B = data_item_B();
+
+    do {
+
+        cout << "\n====================> List Item <====================\n\n";
+        for (int i = 0; i < item_S.size(); i++ ) {
+            count++;
+
+            cout << "[" << count << "] : ";
+
+            cout << "{" << item_S[i].nama << "}" << endl;
+        }
+
+            for (int i = 0; i < item_A.size(); i++ ) {
+            count++;
+
+            cout << "[" << count << "] : ";
+
+            cout << "{" << item_A[i].nama << "}" << endl;
+        }
+
+            for (int i = 0; i < item_B.size(); i++ ) {
+            count++;
+
+            cout << "[" << count << "] : ";
+
+            cout << "{" << item_B[i].nama << "}" << endl;
+
+        }
+
+        if (alret > 0) {
+            cout << "Pilih dengan angka [Input Invalid] : ";
+        } else {
+            cout << "Pilih dengan angka : ";
+        }
+        alret++;
+
+        cin >> pilih;
+
+        switch (toupper(pilih)) {
+            case 'X':
+                list_menu();
+        }
+
+        count = 0;
+
+    } while (pilih != 'X');
+
 }
 
 // fungsi looping dari array agar bisa tampil ke fungsi utama
-void listing(char list) {
-    
-    if (list == '1') {
-        cout << "\n==========> RANK S" << endl;
-    
-        for (int i = 0; i < 5; i++) {
-        cout << "[" << i+1 << "] : " << list_karakter_S[i] << endl;
-        }
-        cout << endl;
 
-        cout << "\n==========> RANK A" << endl;
-        for (int i = 0; i < 10; i++) {
-            cout << "[" << i+1 << "] : " << list_karakter_A[i] << endl;
-        }
-    } else if (list == '2') {
-        cout << "\n==========> RANK S" << endl;
-        for (int i = 0; i < 5; i++) {
-            cout << "[" << i+1 << "] : " << list_artefak_S[i] << endl; 
-        }
 
+void info() {
+
+    char pilih;
+    int alret = 0;
+
+    do {
+
+        cout << "\n====================> Info <====================\n\n";
+        cout << "Program ini menggunakan fungsi random yang ada di standart library C++,\n";
+        cout << "bertujuan untuk mereplika sistem gacha dalam game yang beredar saat ini.\n\n";
+        cout << "Program ini dikembangkan oleh : \n";
+        cout << "      -- Enza" << endl;
+        cout << "      -- Stevanus" << endl;
+        cout << "      -- Fakhri" << endl;
+
+        cout << "\n------------------------------------------------\n";
+
+        if (alret > 0) {
+            cout << "Pilih dengan angka [Input Invalid] : ";
+        } else {
+            cout << "Pilih dengan angka : ";
+        }
+        alret++;
+        cin >> pilih;
         
-        cout << "\n==========> RANK A" << endl;
-        for (int i = 0; i < 5; i++) {
-            cout << "[" << i+1 << "] : " << list_artefak_A[i] << endl;
+        switch (toupper(pilih)) {
+            case 'X':
+                main_menu();
         }
+            
+        
 
-        cout << "\n==========> RANK B" << endl;
-        for (int i = 0; i < 10; i++) {
-            cout << "[" << i+i << "] : " << list_artefak_B[i] << endl;
-        }
-    } else if (list == '3') {
-        cout << "\n==========> RANK S" << endl;
-        for (int i = 0; i < 5; i++) {
-            cout << "[" << i+1 << "] : " << list_item_S[i] << endl;
-        }
-
-        cout << "\n==========> RANK A" << endl;
-        for (int i = 0; i < 10; i++) {
-            cout << "[" << i+1 << "] : " << list_item_A[i] << endl;
-        }
-
-        cout << "\n==========> RANK B" << endl;
-        for (int i = 0; i < 20; i++) {
-            cout << "[" << i+1 << "] : " << list_item_B[i] << endl;
-        }
-    }
+    } while (pilih != 'X');
 }
 
-void list_template() {
-  
+void exit() {
+    cout << "==========> Good Bye <=========";
 }
-
 // fungsi tes untuk debug
 void test() {
     cout << endl << "ini tes apakah melanjutkan atau tidak" << endl;
 }
+
+// ┌───────────┬────────────────────────────────
+// │           │ []                             
+// │   SSSSS   │ nama,nama,nama                 
+// │   S       │ rank,rank,rank                 
+// │   SSSSS   │ elemental,elemental,elemental  
+// │       S   │ type,crit rate,buffs           
+// │   SSSSS   │ crit damage, status            
+// │           │                                
+// └───────────┴────────────────────────────────
+
+// ┌───────────┬──────────────────────────────── 
+// │           │ []                              
+// │    AAA    │ nama,nama,nama                  
+// │   A   A   │ rank,rank,rank                  
+// │   A   A   │ elemental,elemental,elemental   
+// │   AAAAA   │ type,crit rate,buffs            
+// │   A   A   │ crit damage, status             
+// │           │                                 
+// └───────────┴──────────────────────────────── 
+
+// ┌───────────┬──────────────────────────────── 
+// │           │ []                              
+// │   BBBB    │ nama,nama,nama                  
+// │   B   B   │ rank,rank,rank                  
+// │   BBBB    │ elemental,elemental,elemental   
+// │   B   B   │ type,crit rate,buffs            
+// │   BBBB    │ crit damage, status             
+// │           │                                 
+// └───────────┴──────────────────────────────── 
+
+
+
+
