@@ -393,23 +393,44 @@ void list_artefak() {
         cout << "\n====================> List artefak <====================\n\n";
         for (int i = 0; i < artefak_S.size(); i++ ) {
             count++;
-            cout << "[" << count << "] : ";
-
-            cout << "{" << artefak_S[i].nama << "}" << endl;
+            
+            cout << "----------------------------------------------" << endl;
+            cout << "|           | " << "[ " << count << " ]"  << endl;
+            cout << "|   SSSSS   | " << "Nama       : " << artefak_S[i].nama << endl;
+            cout << "|   S       | " << "Rank       : " << artefak_S[i].rank << endl;
+            cout << "|   SSSSS   | " << "Elemental  : " << artefak_S[i].elemental << endl;
+            cout << "|       S   | " << "Crit_rate  : " << artefak_S[i].crit_rate << "%" << endl;
+            cout << "|   SSSSS   | " << "Crit_damage: " << artefak_S[i].crit_damage<< "%" << endl;
+            cout << "|           | " << endl;
+            cout << "----------------------------------------------" << endl;
         }
 
         for (int i = 0; i < artefak_A.size(); i++ ) {
             count++;
-            cout << "[" << count << "] : ";
 
-            cout << "{" << artefak_A[i].nama << "}" << endl;
+            cout << "----------------------------------------------" << endl;
+            cout << "|           | " << "[ " << count << " ]"  << endl;
+            cout << "|    AAA    | " << "Nama       : " << artefak_A[i].nama << endl;
+            cout << "|   A   A   | " << "Rank       : " << artefak_A[i].rank << endl;
+            cout << "|   A   A   | " << "Elemental  : " << artefak_A[i].elemental << endl;
+            cout << "|   AAAAA   | " << "Crit_rate  : " << artefak_A[i].crit_rate << "%" << endl;
+            cout << "|   A   A   | " << "Crit_damage: " << artefak_A[i].crit_damage<< "%" << endl;
+            cout << "|           | " << endl;
+            cout << "----------------------------------------------" << endl;
         }
 
         for (int i = 0; i < artefak_B.size(); i++ ) {
             count++;
-            cout << "[" << count << "] : ";
-
-            cout << "{" << artefak_B[i].nama << "}" << endl;
+         
+            cout << "----------------------------------------------" << endl;
+            cout << "|           | " << "[ " << count << " ]"  << endl;
+            cout << "|   BBBB    | " << "Nama       : " << artefak_B[i].nama << endl;
+            cout << "|   B   B   | " << "Rank       : " << artefak_B[i].rank << endl;
+            cout << "|   BBBB    | " << "Elemental  : " << artefak_B[i].elemental << endl;
+            cout << "|   B   B   | " << "Crit_rate  : " << artefak_B[i].crit_rate << "%" << endl;
+            cout << "|   BBBB    | " << "Crit_damage: " << artefak_B[i].crit_damage<< "%" << endl;
+            cout << "|           | " << endl;
+            cout << "----------------------------------------------" << endl;
         }
 
         if (alret > 0) {
@@ -448,25 +469,43 @@ void list_item() {
         for (int i = 0; i < item_S.size(); i++ ) {
             count++;
 
-            cout << "[" << count << "] : ";
-
-            cout << "{" << item_S[i].nama << "}" << endl;
+            cout << "----------------------------------------------" << endl;
+            cout << "|           | " << "[ " << count << " ]"  << endl;
+            cout << "|   SSSSS   | " << "Nama          : " << item_S[i].nama << endl;
+            cout << "|   S       | " << "Rank          : " << item_S[i].rank << endl;
+            cout << "|   SSSSS   | " << "Elemental     : " << item_S[i].element << endl;
+            cout << "|       S   | " << "Buffs         : " << item_S[i].buffs << endl;
+            cout << "|   SSSSS   | " << "Status Effect : " << item_S[i].status_effect<< endl;
+            cout << "|           | " << endl;
+            cout << "----------------------------------------------" << endl;
         }
 
             for (int i = 0; i < item_A.size(); i++ ) {
             count++;
 
-            cout << "[" << count << "] : ";
-
-            cout << "{" << item_A[i].nama << "}" << endl;
+            cout << "----------------------------------------------" << endl;
+            cout << "|           | " << "[ " << count << " ]"  << endl;
+            cout << "|    AAA    | " << "Nama          : " << item_A[i].nama << endl;
+            cout << "|   A   A   | " << "Rank          : " << item_A[i].rank << endl;
+            cout << "|   A   A   | " << "Elemental     : " << item_A[i].element << endl;
+            cout << "|   AAAAA   | " << "Buffs         : " << item_A[i].buffs << endl;
+            cout << "|   A   A   | " << "Status Effect : " << item_A[i].status_effect<< endl;
+            cout << "|           | " << endl;
+            cout << "----------------------------------------------" << endl;
         }
 
             for (int i = 0; i < item_B.size(); i++ ) {
             count++;
 
-            cout << "[" << count << "] : ";
-
-            cout << "{" << item_B[i].nama << "}" << endl;
+            cout << "----------------------------------------------" << endl;
+            cout << "|           | " << "[ " << count << " ]"  << endl;
+            cout << "|   BBBB    | " << "Nama          : " << item_B[i].nama << endl;
+            cout << "|   B   B   | " << "Rank          : " << item_B[i].rank << endl;
+            cout << "|   ABBB    | " << "Elemental     : " << item_B[i].element << endl;
+            cout << "|   B   B   | " << "Buffs         : " << item_B[i].buffs << endl;
+            cout << "|   BBBB    | " << "Status Effect : " << item_B[i].status_effect<< endl;
+            cout << "|           | " << endl;
+            cout << "----------------------------------------------" << endl;
 
         }
 
@@ -500,13 +539,21 @@ void info() {
 
     do {
 
-        cout << "\n====================> Info <====================\n\n";
-        cout << "Program ini menggunakan fungsi random yang ada di standart library C++,\n";
-        cout << "bertujuan untuk mereplika sistem gacha dalam game yang beredar saat ini.\n\n";
-        cout << "Program ini dikembangkan oleh : \n";
-        cout << "      -- Enza" << endl;
-        cout << "      -- Stevanus" << endl;
-        cout << "      -- Fakhri" << endl;
+        cout << endl;
+        cout << "                                            -<><><><><>-" << endl;
+        cout << "                                            |INFORMASI!|" << endl;
+        cout << "                                            -<><><><><>-" << endl;
+        cout << "<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>" << endl;
+        cout << "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << endl;
+        cout << "            > PROGRAM INI MENGGUNAKAN FUNGSI RANDOM YANG ADA DI STANDART LIBRARY C++." << endl;
+        cout << "              -----------------------------------------------------------------------" << endl;
+        cout << "          >  BERTUJUAN UNTUK MEREPLIKA SISTEM GACHA DALAM GAME YANG BEREDAR SAAT INI." << endl;
+        cout << "             ------------------------------------------------------------------------" << endl;
+        cout << "                         > PROGRAM INI DIKEMBANGKAN OLEH =" << endl;
+        cout << "                            -> ENZA." << endl;
+        cout << "                            -> STEVANUS." << endl;
+        cout << "                            -> FAKHRI." << endl;
+        cout << "<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>--<>" << endl;
 
         cout << "\n------------------------------------------------\n";
 
@@ -535,37 +582,5 @@ void exit() {
 void test() {
     cout << endl << "ini tes apakah melanjutkan atau tidak" << endl;
 }
-
-// ┌───────────┬────────────────────────────────
-// │           │ []                             
-// │   SSSSS   │ nama,nama,nama                 
-// │   S       │ rank,rank,rank                 
-// │   SSSSS   │ elemental,elemental,elemental  
-// │       S   │ type,crit rate,buffs           
-// │   SSSSS   │ crit damage, status            
-// │           │                                
-// └───────────┴────────────────────────────────
-
-// ┌───────────┬──────────────────────────────── 
-// │           │ []                              
-// │    AAA    │ nama,nama,nama                  
-// │   A   A   │ rank,rank,rank                  
-// │   A   A   │ elemental,elemental,elemental   
-// │   AAAAA   │ type,crit rate,buffs            
-// │   A   A   │ crit damage, status             
-// │           │                                 
-// └───────────┴──────────────────────────────── 
-
-// ┌───────────┬──────────────────────────────── 
-// │           │ []                              
-// │   BBBB    │ nama,nama,nama                  
-// │   B   B   │ rank,rank,rank                  
-// │   BBBB    │ elemental,elemental,elemental   
-// │   B   B   │ type,crit rate,buffs            
-// │   BBBB    │ crit damage, status             
-// │           │                                 
-// └───────────┴──────────────────────────────── 
-
-
 
 
