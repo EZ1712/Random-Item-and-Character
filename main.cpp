@@ -57,20 +57,37 @@ void list_karakter();
 void list_artefak();
 void list_item();
 
-void random_value() {
+void gacha_karakter_menu();
+void gacha_karakter_1();
+void gacha_karakter_10();
+
+void gacha_artefak_menu();
+void gacha_artefak_1();
+void gacha_artefak_10();
+
+void gacha_item_menu();
+void gacha_item_1();
+void gacha_item_10();
+
+void card(char rank);
+
+// Fungsi Random Number
+int random_value() {
     random_device rd;
     uniform_int_distribution distribution(1 ,100);
 
-    cout << distribution(rd) << endl;
+    // cout << distribution(rd) << endl;
+    return distribution(rd);
 };
 
+int gacha_value(int max_size);
+int pity = 80;
 void test();
 
 // fungsi utama
 int main() {
 
     main_menu();
-
 
     return 0;
 }
@@ -257,26 +274,528 @@ void play_menu() {
     // int alret = 0;
 
     // do {    
-        cout << "====================> Gacha Choice <====================" << endl << endl;
-        cout << "       [1] : Gacha Limited" << endl;
-        cout << "       [2] : Gacha Standart" << endl;
-        cout << "       [X] : Back" << endl;
+        cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
+        cout << " --------------------------" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " | [1] : RANDOM CHARACTER |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " --------------------------" << " | " << "" << endl;
+        cout << " --------------------------" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "     " << "  ____ _           _            ____                 _                 " << endl;
+        cout << " |                        |" << " | " << "     " << " / ___| |__   ___ (_) ___ ___  |  _ \\ __ _ _ __   __| | ___  _ __ ___  " << endl;
+        cout << " | [2] : RANDOM ARTEFAK   |" << " | " << "     " << "| |   | '_ \\ / _ \\| |/ __/ _ \\ | |_) / _` | '_ \\ / _` |/ _ \\| '_ ` _ \\ " << endl;
+        cout << " |                        |" << " | " << "     " << "| |___| | | | (_) | | (_|  __/ |  _ < (_| | | | | (_| | (_) | | | | | |" << endl;
+        cout << " |                        |" << " | " << "     " << " \\____|_| |_|\\___/|_|\\___\\___| |_| \\_\\__,_|_| |_|\\__,_|\\___/|_| |_| |_|" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " --------------------------" << " | " << "" << endl;
+        cout << " --------------------------" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " | [3] : RANDOM ITEM      |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " --------------------------" << " | " << "" << endl;
+        cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
+
+        cout << "Pilih opsi dengan angka : ";
+        cin >> pilih;
+
+
+        switch (toupper(pilih)) {
+            case '1':
+                gacha_karakter_menu(); break;
+            case '2':
+                gacha_artefak_menu(); break;
+            case '3':
+                gacha_item_menu(); break;
+            case 'X':
+                main_menu();
+        };
+
+    //  } while (alret != 0);
+}
+
+int gacha_value(int max_size) {
+    random_device rd;
+    uniform_int_distribution distribution(0 ,(max_size-1));
+
+    // cout << distribution(rd) << endl;
+    return distribution(rd);
+}
+
+
+// Card // Card // 
+void card(char rank) {
+
+    if (rank = 'S') {
+        cout << "─────────────";
+        cout << "│           │";
+        cout << "│   SSSSS   │";
+        cout << "│   S       │";
+        cout << "│   SSSSS   │";
+        cout << "│       S   │";
+        cout << "│   SSSSS   │";
+        cout << "│           │";
+        cout << "─────────────";
+    } else if (rank = 'A') {
+        cout << "" << endl;
+    } else if (rank = 'B') {
+        cout << "" << endl;
+    };
+
+}
+
+
+// Gacha Karakter // Gacha Karakter // Gacha Karakter // Gacha Karakter // Gacha Karakter // Gacha Karakter // Gacha Karakter // Gacha Karakter // Gacha Karakter // Gacha Karakter // Gacha Karakter 
+void gacha_karakter_menu() {
+
+    char pilih,gacha;
+    // int alret = 0;
+
+    // do {    
+        cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
+        cout << " --------------------------" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " | [1] : RANDOM CHARACTER |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " --------------------------" << " | " << "" << endl;
+        cout << " --------------------------" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "     " << " ____                 _                   _  __               _    _            " << endl;
+        cout << " |                        |" << " | " << "     " << "|  _ \\ __ _ _ __   __| | ___  _ __ ___   | |/ /__ _ _ __ __ _| | _| |_ ___ _ __ " << endl;
+        cout << " | [2] : RANDOM ARTEFAK   |" << " | " << "     " << "| |_) / _` | '_ \\ / _` |/ _ \\| '_ ` _ \\  | ' // _` | '__/ _` | |/ / __/ _ \\ '__|" << endl;
+        cout << " |                        |" << " | " << "     " << "|  _ < (_| | | | | (_| | (_) | | | | | | | . \\ (_| | | | (_| |   <| ||  __/ |   " << endl;
+        cout << " |                        |" << " | " << "     " << "|_| \\_\\__,_|_| |_|\\__,_|\\___/|_| |_| |_| |_|\\_\\__,_|_|  \\__,_|_|\\_\\__\\___|_|   " << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " --------------------------" << " | " << "" << endl;
+        cout << " --------------------------" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " | [3] : RANDOM ITEM      |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " |                        |" << " | " << "" << endl;
+        cout << " --------------------------" << " | " << "" << endl;
+        cout << "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-" << endl;
+        cout << " |   [1] : Random 1x   |   [2] : Ramdom 10x   |   [X] : Kembali   |   Pity : "<< pity << "   |" << endl;
+        cout << "-=-=-=-=-=-=-=-==--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
+       
 
         cout << "Pilih opsi dengan angka : ";
         cin >> pilih;
 
         switch (toupper(pilih)) {
             case '1':
-
+                gacha_karakter_1(); break;
             case '2':
-
+                gacha_karakter_10(); break;
             case 'X':
-                main_menu();
+                play_menu();
         };
 
-    //  } while (alret != 0);
+}
+
+void gacha_karakter_1() {
+
+    char pilih;
+
+    auto karakter_S = data_karakter_S();
+    auto karakter_A = data_karakter_A();
+
+    cout << " ";
+    if (random_value() <= 70) {
+
+        int value = gacha_value(karakter_A.size());
+
+        cout << "----------------------------------------------" << endl;
+        cout << "|           | " << endl;
+        cout << "|    AAA    | " << endl;
+        cout << "|   A   A   | " << "Nama       : " << karakter_A[value].nama << endl;
+        cout << "|   A   A   | " << "Rank       : " << karakter_A[value].rank << endl;
+        cout << "|   AAAAA   | " << "Elemental  : " << karakter_A[value].elemental << endl;
+        cout << "|   A   A   | " << "Type       : " << karakter_A[value].type << endl;
+        cout << "|           | " << endl;
+        cout << "----------------------------------------------" << endl;
+
+
+        // cout << karakter_A[gacha_value(karakter_A.size())].rank << endl;
+        // cout << karakter_A[gacha_value(karakter_A.size())].nama << endl;
+        pity--;
+    } else if (random_value() >70 ) {
+
+        int value = gacha_value(karakter_S.size());
+
+        cout << "----------------------------------------------" << endl;
+        cout << "|           | " << endl;
+        cout << "|   SSSSS   | " << endl;
+        cout << "|   S       | " << "Nama       : " << karakter_S[value].nama << endl;
+        cout << "|   SSSSS   | " << "Rank       : " << karakter_S[value].rank << endl;
+        cout << "|       S   | " << "Elemental  : " << karakter_S[value].elemental << endl;
+        cout << "|   SSSSS   | " << "Type       : " << karakter_S[value].type << endl;
+        cout << "|           | " << endl;
+        cout << "----------------------------------------------" << endl;
+
+        // cout << karakter_S[gacha_value(karakter_S.size())].rank << endl;
+        // cout << karakter_S[gacha_value(karakter_S.size())].nama << endl;
+        pity--;
+    }
+
+    if (pity <= 0) {
+        pity = 80;
+    }
+
+    cout << "Random 1x [1] Ramdom 10x [2] " << pity << endl;;
+    cin >> pilih;
+
+    switch (toupper(pilih)) {
+        case '1':
+            gacha_karakter_1(); break;
+        case '2':
+            gacha_karakter_10(); break;
+        case 'X':
+            play_menu();
+    };
+    
+}
+
+void gacha_karakter_10() {
+
+    char pilih;
+
+    int gacha = random_value();
+
+    auto karakter_S = data_karakter_S();
+    auto karakter_A = data_karakter_A();
+
+    cout << gacha << "dawdadwas ";
+    for (int i = 0; i <= 10;i++) {
+    if (random_value() <= 70) {
+        int value = gacha_value(karakter_A.size());
+
+        cout << "----------------------------------------------" << endl;
+        cout << "|           | " << endl;
+        cout << "|    AAA    | " << endl;
+        cout << "|   A   A   | " << "Nama       : " << karakter_A[value].nama << endl;
+        cout << "|   A   A   | " << "Rank       : " << karakter_A[value].rank << endl;
+        cout << "|   AAAAA   | " << "Elemental  : " << karakter_A[value].elemental << endl;
+        cout << "|   A   A   | " << "Type       : " << karakter_A[value].type << endl;
+        cout << "|           | " << endl;
+        cout << "----------------------------------------------" << endl;
+    } else if (random_value() >70 ) {
+        int value = gacha_value(karakter_S.size());
+
+        cout << "----------------------------------------------" << endl;
+        cout << "|           | " << endl;
+        cout << "|   SSSSS   | " << endl;
+        cout << "|   S       | " << "Nama       : " << karakter_S[value].nama << endl;
+        cout << "|   SSSSS   | " << "Rank       : " << karakter_S[value].rank << endl;
+        cout << "|       S   | " << "Elemental  : " << karakter_S[value].elemental << endl;
+        cout << "|   SSSSS   | " << "Type       : " << karakter_S[value].type << endl;
+        cout << "|           | " << endl;
+        cout << "----------------------------------------------" << endl;
+    }
+    pity--;
+    }
+
+    if (pity <= 0) {
+        pity = 80;
+    }
+
+    cout << "Random 1x [1] Ramdom 10x [2] " << pity << endl;;
+    cin >> pilih;
+
+    switch (toupper(pilih)) {
+        case '1':
+            gacha_karakter_1(); break;
+        case '2':
+            gacha_karakter_10(); break;
+        case 'X':
+            play_menu();
+    };
+    
+}
+
+
+// Gacha Artefak // Gacha Artefak // Gacha Artefak // Gacha Artefak // Gacha Artefak // Gacha Artefak // Gacha Artefak // Gacha Artefak // Gacha Artefak // Gacha Artefak // Gacha Artefak //
+void gacha_artefak_menu() {
+
+    char pilih,gacha;
+    // int alret = 0;
+
+    // do {    
+        cout << "-=-=-=-=-=-=-=-==--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
+        cout << "---------------------" << " | " << "" << endl;
+        cout << "|                   |" << " | " << "" << endl;
+        cout << "|  RANDOM CHARACTER |" << " | " << "" << endl;
+        cout << "|                   |" << " | " << "" << endl;
+        cout << "---------------------" << " | " << "" << endl;
+        cout << "---------------------" << " | " << "" << endl;
+        cout << "|                   |" << " | " << "" << endl;
+        cout << "|   RANDOM ARTEFAK  |" << " | " << " RANDOM Artefak" << endl;
+        cout << "|                   |" << " | " << "" << endl;
+        cout << "---------------------" << " | " << "" << endl;
+        cout << "---------------------" << " | " << "" << endl;
+        cout << "|                   |" << " | " << "" << endl;
+        cout << "|    RANDOM ITEM    |" << " | " << "" << endl;
+        cout << "|                   |" << " | " << "" << endl;
+        cout << "---------------------" << " | " << "" << endl;
+        cout << "-=-=-=-=-=-=-=-==--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
+        cout << "Random 1x [1] Ramdom 10x [2] "<< pity << endl;
+        cout << "-=-=-=-=-=-=-=-==--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
+       
+
+        cout << "Pilih opsi dengan angka : ";
+        cin >> pilih;
+
+        switch (toupper(pilih)) {
+            case '1':
+                gacha_artefak_1(); break;
+            case '2':
+                gacha_artefak_10(); break;
+            case 'X':
+                play_menu();
+        };
 
 }
+
+void gacha_artefak_1() {
+
+    char pilih;
+
+    auto artefak_S = data_artefak_S();
+    auto artefak_A = data_artefak_A();
+    auto artefak_B = data_artefak_B();
+
+    cout << " ";
+     if (random_value() <= 50) {
+        cout << artefak_B[gacha_value(artefak_B.size())].rank << endl;
+        cout << artefak_B[gacha_value(artefak_B.size())].nama << endl;
+        cout << "-----" << endl;
+        pity--;
+    } else if (random_value() <= 80 ) {
+        cout << artefak_A[gacha_value(artefak_A.size())].rank << endl;
+        cout << artefak_A[gacha_value(artefak_A.size())].nama << endl;
+        cout << "-----" << endl;
+        pity--;
+    } else if (random_value() > 80) {
+        cout << artefak_S[gacha_value(artefak_S.size())].rank << endl;
+        cout << artefak_S[gacha_value(artefak_S.size())].nama << endl;
+        cout << "-----" << endl;
+        pity--;
+    }
+
+    if (pity <= 0) {
+        pity = 80;
+    }
+
+    cout << "Random 1x [1] Ramdom 10x [2] " << pity << endl;;
+    cin >> pilih;
+
+    switch (toupper(pilih)) {
+        case '1':
+            gacha_artefak_1(); break;
+        case '2':
+            gacha_artefak_10(); break;
+        case 'X':
+            play_menu();
+    };
+    
+}
+
+void gacha_artefak_10() {
+
+    char pilih;
+
+    int gacha = random_value();
+
+    auto artefak_S = data_artefak_S();
+    auto artefak_A = data_artefak_A();
+    auto artefak_B = data_artefak_B();
+
+    cout << gacha << "dawdadwas ";
+    for (int i = 0; i <= 10;i++) {
+    if (random_value() <= 50) {
+        cout << artefak_B[gacha_value(artefak_B.size())].rank << endl;
+        cout << artefak_B[gacha_value(artefak_B.size())].nama << endl;
+        cout << "-----" << endl;
+    } else if (random_value() <= 80 ) {
+        cout << artefak_A[gacha_value(artefak_A.size())].rank << endl;
+        cout << artefak_A[gacha_value(artefak_A.size())].nama << endl;
+        cout << "-----" << endl;
+    } else if (random_value() > 80) {
+        cout << artefak_S[gacha_value(artefak_S.size())].rank << endl;
+        cout << artefak_S[gacha_value(artefak_S.size())].nama << endl;
+        cout << "-----" << endl;
+    }
+    pity--;
+    }
+
+    if (pity <= 0) {
+        pity = 80;
+    }
+
+    cout << "Random 1x [1] Ramdom 10x [2] " << pity << endl;;
+    cin >> pilih;
+
+    switch (toupper(pilih)) {
+        case '1':
+            gacha_artefak_1(); break;
+        case '2':
+            gacha_artefak_10(); break;
+        case 'X':
+            play_menu();
+    };
+    
+}
+
+
+// Gacha Item // Gacha item // Gacha item // Gacha item // Gacha item // Gacha item // Gacha item // Gacha item // Gacha item // Gacha item // Gacha item //
+void gacha_item_menu() {
+
+    char pilih,gacha;
+    // int alret = 0;
+
+    // do {    
+        cout << "-=-=-=-=-=-=-=-==--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
+        cout << "---------------------" << " | " << "" << endl;
+        cout << "|                   |" << " | " << "" << endl;
+        cout << "|  RANDOM CHARACTER |" << " | " << "" << endl;
+        cout << "|                   |" << " | " << "" << endl;
+        cout << "---------------------" << " | " << "" << endl;
+        cout << "---------------------" << " | " << "" << endl;
+        cout << "|                   |" << " | " << "" << endl;
+        cout << "|   RANDOM ARTEFAK  |" << " | " << " RANDOM ITEM" << endl;
+        cout << "|                   |" << " | " << "" << endl;
+        cout << "---------------------" << " | " << "" << endl;
+        cout << "---------------------" << " | " << "" << endl;
+        cout << "|                   |" << " | " << "" << endl;
+        cout << "|    RANDOM ITEM    |" << " | " << "" << endl;
+        cout << "|                   |" << " | " << "" << endl;
+        cout << "---------------------" << " | " << "" << endl;
+        cout << "-=-=-=-=-=-=-=-==--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
+        cout << "Random 1x [1] Ramdom 10x [2] "<< pity << endl;
+        cout << "-=-=-=-=-=-=-=-==--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << endl;
+       
+
+        cout << "Pilih opsi dengan angka : ";
+        cin >> pilih;
+
+        switch (toupper(pilih)) {
+            case '1':
+                gacha_item_1(); break;
+            case '2':
+                gacha_item_10(); break;
+            case 'X':
+                play_menu();
+        };
+
+}
+
+void gacha_item_1() {
+
+    char pilih;
+
+    auto item_S = data_item_S();
+    auto item_A = data_item_A();
+    auto item_B = data_item_B();
+
+    cout << " ";
+     if (random_value() <= 50) {
+        cout << item_B[gacha_value(item_B.size())].rank << endl;
+        cout << item_B[gacha_value(item_B.size())].nama << endl;
+        cout << "-----" << endl;
+        pity--;
+    } else if (random_value() <= 80 ) {
+        cout << item_A[gacha_value(item_A.size())].rank << endl;
+        cout << item_A[gacha_value(item_A.size())].nama << endl;
+        cout << "-----" << endl;
+        pity--;
+    } else if (random_value() > 80) {
+        cout << item_S[gacha_value(item_S.size())].rank << endl;
+        cout << item_S[gacha_value(item_S.size())].nama << endl;
+        cout << "-----" << endl;
+        pity--;
+    }
+
+    if (pity <= 0) {
+        pity = 80;
+    }
+
+    cout << "Random 1x [1] Ramdom 10x [2] " << pity << endl;;
+    cin >> pilih;
+
+    switch (toupper(pilih)) {
+        case '1':
+            gacha_item_1(); break;
+        case '2':
+            gacha_item_10(); break;
+        case 'X':
+            play_menu();
+    };
+    
+}
+
+void gacha_item_10() {
+
+    char pilih;
+
+    int gacha = random_value();
+
+    auto item_S = data_item_S();
+    auto item_A = data_item_A();
+    auto item_B = data_item_B();
+
+    cout << gacha << "dawdadwas ";
+    for (int i = 0; i <= 10;i++) {
+    if (random_value() <= 50) {
+        cout << item_B[gacha_value(item_B.size())].rank << endl;
+        cout << item_B[gacha_value(item_B.size())].nama << endl;
+        cout << "-----" << endl;
+    } else if (random_value() <= 80 ) {
+        cout << item_A[gacha_value(item_A.size())].rank << endl;
+        cout << item_A[gacha_value(item_A.size())].nama << endl;
+        cout << "-----" << endl;
+    } else if (random_value() > 80) {
+        cout << item_S[gacha_value(item_S.size())].rank << endl;
+        cout << item_S[gacha_value(item_S.size())].nama << endl;
+        cout << "-----" << endl;
+    }
+    pity--;
+    }
+
+    if (pity <= 0) {
+        pity = 80;
+    }
+
+    cout << "Random 1x [1] Ramdom 10x [2] " << pity << endl;;
+    cin >> pilih;
+
+    switch (toupper(pilih)) {
+        case '1':
+            gacha_item_1(); break;
+        case '2':
+            gacha_item_10(); break;
+        case 'X':
+            play_menu();
+    };
+    
+}
+
+
+
+
 
 // fungsi untuk melihat list karakter, artefak, dan item
 void list_menu() {
@@ -584,3 +1103,26 @@ void test() {
 }
 
 
+                                                                                                   
+//      ---------------------------------------------------------------------------
+//      |                                                                         |
+//     |                                                                         |
+// >                  <     |                                                                         |
+//      |                                                                         |
+                        //  |                                                                         |
+// --------------------     |                                                                         |
+// >                  <     |                                                                         |
+// >   GACHA ITEM     <     |                                                                         |
+// >                  <     |                                                                         |
+// --------------------     |                                                                         |
+                        //  |                                                                         |
+                        //  |                                                                         |
+// --------------------     |                                                                         |
+// >                  <     |                                                                         |
+// >  GACHA ARTEFAK   <     |                                                                         |
+// >                  <     |                                                                         |
+// --------------------     |                                                                         |
+                        //  |                                                                         |
+                        //  ---------------------------------------------------------------------------
+                                                                                                                                  
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

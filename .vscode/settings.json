@@ -4,6 +4,14 @@
         "array": "cpp",
         "iostream": "cpp",
         "algorithm": "cpp",
-        "format": "cpp"
+        "format": "cpp",
+        "charconv": "cpp",
+        "optional": "cpp",
+        "ranges": "cpp",
+        "system_error": "cpp",
+        "functional": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp"
     }
 }
