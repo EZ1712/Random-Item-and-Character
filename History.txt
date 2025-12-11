@@ -1,0 +1,91 @@
+History random item and character
+
+ Karakter  | Harbinger | A | Fire | Demon | 
+ Karakter  | The Forgotten | A | Hydro | Demigod | 
+ Karakter  | The Forgotten | A | Hydro | Demigod | 
+ Karakter  | Boravia | A | Ice | Human | 
+ Karakter  | Stridsvan | A | Hydro | Demigod | 
+ Karakter  | Dargon | A | Elektro | Demigod | 
+ Karakter  | Gorgon | A | Hydro | Demon | 
+ Karakter  | stella | A | Fire | Human | 
+ Karakter  | Dargon | A | Elektro | Demigod | 
+ Karakter  | Boravia | A | Ice | Human | 
+ Karakter  | The Forgotten | A | Hydro | Demigod | 
+ Karakter  | Warden | A | Ice | Human | 
+ Karakter  | Gorgon | A | Hydro | Demon | 
+ Artefak  | Bone of the sea | A | Ice | 15% | 30% | 
+ Artefak  | Cursium of Ender | B | Wind | 8% | 19% | 
+ Artefak  | Smite Of dawn | B | Hydro | 7% | 18% | 
+ Artefak  | Corus Dram | A | Fire | 24% | 48% | 
+ Artefak  | Glove of the ancient | S | Hydro | 40% | 80% | 
+ Artefak  | Divine sharpness scroll | A | Ice | 17% | 33% | 
+ Artefak  | The silenced note | B | Fire | 6% | 14% | 
+ Artefak  | Divine sharpness scroll | A | Ice | 17% | 33% | 
+ Artefak  | Deck of ages | A | Fire | 22% | 45% | 
+ Artefak  | Chains of borivia | B | Toxin | 9% | 12% | 
+ Artefak  | Mob masher | B | Ice | 10% | 25% | 
+ Artefak  | Cursium of Ender | B | Wind | 8% | 19% | 
+ Artefak  | Divine sharpness scroll | A | Ice | 17% | 33% | 
+ Artefak  | Charm of mortal | B | Earth | 5% | 11% | 
+ Artefak  | Charm of hydro | B | Light | 7% | 17% | 
+ Artefak  | Deck of ages | A | Fire | 22% | 45% | 
+ Artefak  | The silenced note | B | Fire | 6% | 14% | 
+ Artefak  | Vibranium of ages | B | Hydro | 9% | 21% | 
+ Artefak  | Bone of the sea | A | Ice | 15% | 30% | 
+ Artefak  | Corus Dram | A | Fire | 24% | 48% | 
+ Artefak  | Smite Of dawn | B | Hydro | 7% | 18% | 
+ Artefak  | Corus Dram | A | Fire | 24% | 48% | 
+ Artefak  | Book of utheric | A | Elektro | 19% | 39% | 
+ Artefak  | Smite Of dawn | B | Hydro | 7% | 18% | 
+ Artefak  | Bone of the sea | A | Ice | 15% | 30% | 
+ Artefak  | Book of utheric | A | Elektro | 19% | 39% | 
+ Artefak  | Book of utheric | A | Elektro | 19% | 39% | 
+ Artefak  | Dune of smith | B | Electro | 5% | 10% | 
+ Artefak  | Bone of the sea | A | Ice | 15% | 30% | 
+ Artefak  | Bone of the sea | A | Ice | 15% | 30% | 
+ Artefak  | Cursium of Ender | B | Wind | 8% | 19% | 
+ Item  | Demonforged pearl | S | Elektro | 40% Fire Damage | Poison | 
+ Item  | Luminous crystal shard | A | Fire | 10% Mana Regen | Daze | 
+ Item  | Breach Gem | B | Wind | 3% Armor Penetration | Weakness | 
+ Item  | Zinc | A | Ice | 5% Attack Speed | chill | 
+ Item  | Diga Shard | B | Electro | 2% Evasion | Sap Energy | 
+ Item  | Guardian Gem | B | Toxin | 5% HP | Burn on Attacker | 
+ Item  | Giga gem | A | Light | 20% Max HP | Disorient | 
+ Item  | Mortalforged pearl | A | Wind | 15% Physical Damage | Minor Blind Aura | 
+ Item  | Demiforged pearl | A | Earth | 10% Elemental Resist | Bleed Chance | 
+ Item  | Demiforged pearl | A | Earth | 10% Elemental Resist | Bleed Chance | 
+ Item  | Theodrite | B | Toxin | 2% Ice Resist | Mark | 
+ Item  | Iolite | B | Ice | 2% Luck | Chill | 
+ Item  | Giga gem | A | Light | 20% Max HP | Disorient | 
+ Item  | Guardian Gem | B | Toxin | 5% HP | Burn on Attacker | 
+ Item  | Alchemical Niter | B | Fire | 2% Dig Speed | Daze | 
+ Item  | Zinc | A | Ice | 5% Attack Speed | chill | 
+ Item  | Alexandrite | B | Wind | 3% Earth Resist | Cripple | 
+ Item  | Diga Shard | B | Electro | 2% Evasion | Sap Energy | 
+ Item  | Lostrite Shard | B | Ice | 2% Knockbck Resist | Weaken Armor | 
+ Item  | Lostrite Shard | B | Ice | 2% Knockbck Resist | Weaken Armor | 
+ Item  | Andesite gem | A | Hydro | 10% Defense | Mark Target | 
+ Item  | Artisan | B | Elektro | 3% Light Damage | Root | 
+ Item  | Lostrite Shard | B | Ice | 2% Knockbck Resist | Weaken Armor | 
+ Item  | Cytrine | B | Fire | Spell Haste | Sap Mana | 
+ Item  | Cytrine | B | Fire | Spell Haste | Sap Mana | 
+ Item  | Mortalforged pearl | A | Wind | 15% Physical Damage | Minor Blind Aura | 
+ Item  | Zinc | A | Ice | 5% Attack Speed | chill | 
+ Item  | Luminous crystal shard | A | Fire | 10% Mana Regen | Daze | 
+ Item  | Steel Malice | A | Fire | 10% Damage | Interrup Casting | 
+ Item  | Salpeter | B | Hydro | 5% Crafting Speed | Fear | 
+ Item  | Andesite gem | A | Hydro | 10% Defense | Mark Target | 
+ Item  | Tanzanite | B | Hydro | 2% Potion Effectiveness | Interrupt | 
+ Item  | Lostrite Shard | B | Ice | 2% Knockbck Resist | Weaken Armor | 
+ Item  | Giga gem | A | Light | 20% Max HP | Disorient | 
+ Item  | Dimerald | B | Earth | 2% Crit Chance | Confuse | 
+ Item  | Brawler's gem | B | Earth | 5% melee Damage | Stun | 
+ Item  | Sheetmet | A | Shadow | 10% Block Chance | Cripple Movement | 
+ Item  | Dimerald | B | Earth | 2% Crit Chance | Confuse | 
+ Item  | Zinc | A | Ice | 5% Attack Speed | chill | 
+ Item  | Guardian Gem | B | Toxin | 5% HP | Burn on Attacker | 
+ Item  | Giga gem | A | Light | 20% Max HP | Disorient | 
+ Item  | Lostrite Shard | B | Ice | 2% Knockbck Resist | Weaken Armor | 
+ Item  | Steel Malice | A | Fire | 10% Damage | Interrup Casting | 
+ Item  | Zinc | A | Ice | 5% Attack Speed | chill | 
+ Item  | Zinc | A | Ice | 5% Attack Speed | chill | 

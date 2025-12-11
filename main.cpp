@@ -4,6 +4,7 @@
 #include <random>
 #include <cctype>
 #include <stdlib.h>
+#include <fstream>
 
 using namespace std;
 
@@ -83,9 +84,18 @@ int random_value() {
 int gacha_value(int max_size);
 int pity = 80;
 
+ofstream myFile("History.txt");
+
+
+
 // fungsi utama
 int main() {
 
+    
+
+    myFile << "History random item and character" << endl << endl;
+
+    // myFile.close();
     main_menu();
 
     return 0;
@@ -396,6 +406,8 @@ void gacha_karakter_1() {
     cout << " ";
     if (random_value() <= 70) {
 
+        
+
         int value = gacha_value(karakter_A.size());
 
         cout << "----------------------------------------------" << endl;
@@ -408,7 +420,11 @@ void gacha_karakter_1() {
         cout << "|           | " << endl;
         cout << "----------------------------------------------" << endl;
 
+        // ofstream myFile("History.txt");
 
+        myFile.open("History.txt", ios::app);
+        myFile << " Karakter " << " | " << karakter_A[value].nama << " | " << karakter_A[value].rank << " | " << karakter_A[value].elemental << " | " << karakter_A[value].type << " | " << endl;
+        myFile.close();
         // cout << karakter_A[gacha_value(karakter_A.size())].rank << endl;
         // cout << karakter_A[gacha_value(karakter_A.size())].nama << endl;
         pity--;
@@ -426,6 +442,9 @@ void gacha_karakter_1() {
         cout << "|           | " << endl;
         cout << "----------------------------------------------" << endl;
 
+        myFile.open("History.txt", ios::app);
+        myFile << " Karakter " << " | " << karakter_S[value].nama << " | " << karakter_S[value].rank << " | " << karakter_S[value].elemental << " | " << karakter_S[value].type << " | " << endl;
+        myFile.close();
         // cout << karakter_S[gacha_value(karakter_S.size())].rank << endl;
         // cout << karakter_S[gacha_value(karakter_S.size())].nama << endl;
         pity--;
@@ -474,6 +493,10 @@ void gacha_karakter_10() {
         cout << "|   A   A   | " << "Type       : " << karakter_A[value].type << endl;
         cout << "|           | " << endl;
         cout << "----------------------------------------------" << endl;
+
+        myFile.open("History.txt", ios::app);
+        myFile << " Karakter " << " | " << karakter_A[value].nama << " | " << karakter_A[value].rank << " | " << karakter_A[value].elemental << " | " << karakter_A[value].type << " | " << endl;
+        myFile.close();
     } else if (random_value() >70 ) {
         int value = gacha_value(karakter_S.size());
 
@@ -486,6 +509,10 @@ void gacha_karakter_10() {
         cout << "|   SSSSS   | " << "Type       : " << karakter_S[value].type << endl;
         cout << "|           | " << endl;
         cout << "----------------------------------------------" << endl;
+
+        myFile.open("History.txt", ios::app);
+        myFile << " Karakter " << " | " << karakter_S[value].nama << " | " << karakter_S[value].rank << " | " << karakter_S[value].elemental << " | " << karakter_S[value].type << " | " << endl;
+        myFile.close();
     }
     pity--;
     }
@@ -590,6 +617,10 @@ void gacha_artefak_1() {
         cout << "|           | " << endl;
         cout << "----------------------------------------------" << endl;
 
+        myFile.open("History.txt", ios::app);
+        myFile << " Artefak " << " | " << artefak_B[value].nama << " | " << artefak_B[value].rank << " | " << artefak_B[value].elemental << " | " << artefak_B[value].crit_rate << "%" << " | "  << artefak_B[value].crit_damage << "%" << " | " << endl;
+        myFile.close();
+
         // cout << artefak_B[gacha_value(artefak_B.size())].rank << endl;
         // cout << artefak_B[gacha_value(artefak_B.size())].nama << endl;
         // cout << "-----" << endl;
@@ -608,6 +639,10 @@ void gacha_artefak_1() {
         cout << "|           | " << endl;
         cout << "----------------------------------------------" << endl;
 
+        myFile.open("History.txt", ios::app);
+        myFile << " Artefak " << " | " << artefak_A[value].nama << " | " << artefak_A[value].rank << " | " << artefak_A[value].elemental << " | " << artefak_A[value].crit_rate << "%" << " | "  << artefak_A[value].crit_damage << "%" << " | " << endl;
+        myFile.close();
+
         // cout << artefak_A[gacha_value(artefak_A.size())].rank << endl;
         // cout << artefak_A[gacha_value(artefak_A.size())].nama << endl;
         // cout << "-----" << endl;
@@ -625,6 +660,10 @@ void gacha_artefak_1() {
         cout << "|   SSSSS   | " << "Crit_damage: " << artefak_S[value].crit_damage<< "%" << endl;
         cout << "|           | " << endl;
         cout << "----------------------------------------------" << endl;
+
+        myFile.open("History.txt", ios::app);
+        myFile << " Artefak " << " | " << artefak_S[value].nama << " | " << artefak_S[value].rank << " | " << artefak_S[value].elemental << " | " << artefak_S[value].crit_rate << "%" << " | "  << artefak_S[value].crit_damage << "%" << " | " << endl;
+        myFile.close();
 
         // cout << artefak_S[gacha_value(artefak_S.size())].rank << endl;
         // cout << artefak_S[gacha_value(artefak_S.size())].nama << endl;
@@ -676,6 +715,10 @@ void gacha_artefak_10() {
         cout << "|   BBBB    | " << "Crit_damage: " << artefak_B[value].crit_damage<< "%" << endl;
         cout << "|           | " << endl;
         cout << "----------------------------------------------" << endl;
+
+        myFile.open("History.txt", ios::app);
+        myFile << " Artefak " << " | " << artefak_B[value].nama << " | " << artefak_B[value].rank << " | " << artefak_B[value].elemental << " | " << artefak_B[value].crit_rate << "%" << " | "  << artefak_B[value].crit_damage << "%" << " | " << endl;
+        myFile.close();
     } else if (random_value() <= 80 ) {
         int value = gacha_value(artefak_A.size());
 
@@ -688,6 +731,10 @@ void gacha_artefak_10() {
         cout << "|   A   A   | " << "Crit_damage: " << artefak_A[value].crit_damage<< "%" << endl;
         cout << "|           | " << endl;
         cout << "----------------------------------------------" << endl;
+
+        myFile.open("History.txt", ios::app);
+        myFile << " Artefak " << " | " << artefak_A[value].nama << " | " << artefak_A[value].rank << " | " << artefak_A[value].elemental << " | " << artefak_A[value].crit_rate << "%" << " | "  << artefak_A[value].crit_damage << "%" << " | " << endl;
+        myFile.close();
     } else if (random_value() > 80) {
         int value = gacha_value(artefak_S.size());
 
@@ -700,6 +747,10 @@ void gacha_artefak_10() {
         cout << "|   SSSSS   | " << "Crit_damage: " << artefak_S[value].crit_damage<< "%" << endl;
         cout << "|           | " << endl;
         cout << "----------------------------------------------" << endl;
+
+        myFile.open("History.txt", ios::app);
+        myFile << " Artefak " << " | " << artefak_S[value].nama << " | " << artefak_S[value].rank << " | " << artefak_S[value].elemental << " | " << artefak_S[value].crit_rate << "%" << " | "  << artefak_S[value].crit_damage << "%" << " | " << endl;
+        myFile.close();
     }
         pity--;
     }
@@ -800,6 +851,10 @@ void gacha_item_1() {
         cout << "|   BBBB    | " << "Status Effect : " << item_B[value].status_effect<< endl;
         cout << "|           | " << endl;
         cout << "----------------------------------------------" << endl;
+
+        myFile.open("History.txt", ios::app);
+        myFile << " Item " << " | " << item_B[value].nama << " | " << item_B[value].rank << " | " << item_B[value].element << " | " << item_B[value].buffs << " | "  << item_B[value].status_effect << " | " << endl;
+        myFile.close();
         pity--;
     } else if (random_value() <= 80 ) {
         int value = gacha_value(item_A.size());
@@ -813,6 +868,10 @@ void gacha_item_1() {
         cout << "|   A   A   | " << "Status Effect : " << item_A[value].status_effect<< endl;
         cout << "|           | " << endl;
         cout << "----------------------------------------------" << endl;
+
+        myFile.open("History.txt", ios::app);
+        myFile << " Item " << " | " << item_A[value].nama << " | " << item_A[value].rank << " | " << item_A[value].element << " | " << item_A[value].buffs << " | "  << item_A[value].status_effect << " | " << endl;
+        myFile.close();
         pity--;
     } else if (random_value() > 80) {
         int value = gacha_value(item_S.size());
@@ -826,6 +885,10 @@ void gacha_item_1() {
         cout << "|   SSSSS   | " << "Status Effect : " << item_S[value].status_effect<< endl;
         cout << "|           | " << endl;
         cout << "----------------------------------------------" << endl;
+
+        myFile.open("History.txt", ios::app);
+        myFile << " Item " << " | " << item_S[value].nama << " | " << item_S[value].rank << " | " << item_S[value].element << " | " << item_S[value].buffs << " | "  << item_S[value].status_effect << " | " << endl;
+        myFile.close();
         pity--;
     }
 
@@ -875,6 +938,10 @@ void gacha_item_10() {
         cout << "|           | " << endl;
         cout << "----------------------------------------------" << endl;
 
+        myFile.open("History.txt", ios::app);
+        myFile << " Item " << " | " << item_B[value].nama << " | " << item_B[value].rank << " | " << item_B[value].element << " | " << item_B[value].buffs << " | "  << item_B[value].status_effect << " | " << endl;
+        myFile.close();
+
     } else if (random_value() <= 80 ) {
         int value = gacha_value(item_A.size());
 
@@ -887,6 +954,10 @@ void gacha_item_10() {
         cout << "|   A   A   | " << "Status Effect : " << item_A[value].status_effect<< endl;
         cout << "|           | " << endl;
         cout << "----------------------------------------------" << endl;
+
+        myFile.open("History.txt", ios::app);
+        myFile << " Item " << " | " << item_A[value].nama << " | " << item_A[value].rank << " | " << item_A[value].element << " | " << item_A[value].buffs << " | "  << item_A[value].status_effect << " | " << endl;
+        myFile.close();
     } else if (random_value() > 80) {
         int value = gacha_value(item_S.size());
 
@@ -899,6 +970,10 @@ void gacha_item_10() {
         cout << "|   SSSSS   | " << "Status Effect : " << item_S[value].status_effect<< endl;
         cout << "|           | " << endl;
         cout << "----------------------------------------------" << endl;
+
+        myFile.open("History.txt", ios::app);
+        myFile << " Item " << " | " << item_S[value].nama << " | " << item_S[value].rank << " | " << item_S[value].element << " | " << item_S[value].buffs << " | "  << item_S[value].status_effect << " | " << endl;
+        myFile.close();
     }
     pity--;
     }
